@@ -363,8 +363,8 @@ async def play(_, message: Message):
         await mystic.edit( 
             f"**List Of Result**\n\n『1』 <b>{title1}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n『2』 <b>{title2}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n『3』 <b>{title3}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n『4』 <b>{title4}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n『5』 <b>{title5}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>",    
             reply_markup=InlineKeyboardMarkup(buttons),
+            disable_web_page_preview=True
         )  
-        disable_web_page_preview=True
         return   
     if await is_active_chat(chat_id):
         position = await put(chat_id, file=file)
@@ -625,16 +625,16 @@ async def popat(_,CallbackQuery):
         await CallbackQuery.edit_message_text(
             f"『6』 <b>{title6}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID6})__</u>\n\n『7』 <b>{title7}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID7})__</u>\n\n『8』 <b>{title8}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID8})__</u>\n\n『9』 <b>{title9}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID9})__</u>\n\n『10』 <b>{title10}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID10})__</u>",    
             reply_markup=InlineKeyboardMarkup(buttons),
+            disable_web_page_preview=True
         )  
-        disable_web_page_preview=True
         return    
     if i == 2:
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
         await CallbackQuery.edit_message_text(
             f"『1』 <b>{title1}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n『2』 <b>{title2}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n『3』 <b>{title3}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n『4』 <b>{title4}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n『5』 <b>{title5}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>",    
             reply_markup=InlineKeyboardMarkup(buttons),
-        )  
-        disable_web_page_preview=True
+            disable_web_page_preview=True 
+       )  
         return    
         
 @app.on_message(filters.command("playplaylist"))
