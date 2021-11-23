@@ -35,6 +35,20 @@ pstart_markup=InlineKeyboardMarkup(
             ]
         ) 
 
+
+@Client.on_message(filters.group & filters.command(["start", "help"]))
+async def start(_, message: Message):
+    chat_id = message.chat.id
+    await message.reply_text(
+        f"""Hi {message.from_user.mention()}!
+
+Thanks for using {BOT_NAME} in {message.chat.title}.
+For any assistance or help, checkout our support group and channel.""",
+       reply_markup=pstart_markup,
+       disable_web_page_preview=True
+    )
+    return
+
     
 @Client.on_message(filters.private & filters.incoming & filters.command("start"))
 async def play(_, message: Message):
@@ -45,8 +59,7 @@ async def play(_, message: Message):
         await app.send_message(message.chat.id,
             text=f"Hi. {rpk}!\n\nThis is Vieena Music Bot.\nI play music on Telegram's Voice Chats.\n\nOnly for selected chats.",
             parse_mode="markdown",
-            reply_markup=pstart_markup,
-            reply_to_message_id=message.message_id
+            reply_markup=pstart_markup
         )
     elif len(message.command) == 2:                                                           
         query = message.text.split(None, 1)[1]
