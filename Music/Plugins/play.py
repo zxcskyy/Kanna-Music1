@@ -133,17 +133,17 @@ def time_to_seconds(time):
 @Client.on_message(command(["play", f"play@{BOT_USERNAME}", "p"]))
 async def play(_, message: Message):
     chat_id = message.chat.id
-    if not await is_served_chat(chat_id):
-        await message.reply_text(f"❌ Not in allowed list chats\n\n{BOT_NAME} is only for allowed chats. Ask any Sudo User to allow your chat.\nCheck Sudo Users List Below",
-                                 reply_markup=InlineKeyboardMarkup(
-                                     [
-                                         [
-                                             InlineKeyboardButton(text="Support Group", url="https://t.me/vieenasupport"),
-                                             InlineKeyboardButton(text="Channel Update", url="https://t.me/ahhsudahlahhh"),
-                                         ]
-                                     ]
-                                 ))
-        return await app.leave_chat(chat_id)  
+    #if not await is_served_chat(chat_id):
+    #    await message.reply_text(f"❌ Not in allowed list chats\n\n{BOT_NAME} is only for allowed chats. Ask any Sudo User to allow your chat.\nCheck Sudo Users List Below",
+    #                             reply_markup=InlineKeyboardMarkup(
+    #                                 [
+    #                                     [
+    #                                         InlineKeyboardButton(text="Support Group", url="https://t.me/vieenasupport"),
+    #                                         InlineKeyboardButton(text="Channel Update", url="https://t.me/ahhsudahlahhh"),
+    #                                     ]
+    #                                 ]
+    #                             ))
+    #    return await app.leave_chat(chat_id)  
     if message.sender_chat:
         return await message.reply_text("❌ You're an __Anonymous Admin__!\n✅ Revert back to User Account From Admin Rights.")  
     user_id = message.from_user.id
@@ -151,7 +151,7 @@ async def play(_, message: Message):
     username = message.from_user.first_name
     checking = f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
     if await is_on_off(1):
-        LOG_ID = "-1001429892362"
+        LOG_ID = LOG_GROUP_ID
         if int(chat_id) != int(LOG_ID):
             return await message.reply_text(f">> ❌ Bot is under Maintenance, Sorry for the inconvenience!")
         return await message.reply_text(f">> ❌ Bot is under Maintenance, Sorry for the inconvenience!")
