@@ -138,7 +138,8 @@ async def play(_, message: Message):
                                  reply_markup=InlineKeyboardMarkup(
                                      [
                                          [
-                                             InlineKeyboardButton(text='Sudo list 📜', url=f'https://t.me/{BOT_USERNAME}?start=sudolist')
+                                             InlineKeyboardButton(text='Support Group', url=f'https://t.me/vieenasupport')
+                                             InlineKeyboardButton(text='Channel Update', url=f'https://t.me/ahhsudahlahhh')
                                          ]
                                      ]
                                  ))
