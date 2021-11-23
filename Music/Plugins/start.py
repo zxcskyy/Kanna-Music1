@@ -18,7 +18,24 @@ from Music.MusicUtilities.database.chats import (get_served_chats, is_served_cha
 from Music.MusicUtilities.database.queue import (is_active_chat, add_active_chat, remove_active_chat, music_on, is_music_playing, music_off)
 from Music.MusicUtilities.database.sudo import (get_sudoers, get_sudoers, remove_sudo)
 
-     
+pstart_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        f"➕ Summon {BOT_NAME} ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                ],[
+                    InlineKeyboardButton(
+                        "📣 Channel", url="https://t.me/ahhsudahlahhh"), 
+                    InlineKeyboardButton(
+                        "👥 Support", url="https://t.me/vieenasupport")
+                ],[
+                    InlineKeyboardButton(
+                        "❤️ Owner", url="https://t.me/zxcskyy")
+                ]
+            ]
+        ) 
+
+    
 @Client.on_message(filters.private & filters.incoming & filters.command("start"))
 async def play(_, message: Message):
     if len(message.command) == 1:
