@@ -359,11 +359,9 @@ async def play(_, message: Message):
         except Exception as e:
             return await mystic.edit_text(f"❌ Soung Not Found.\n**Possible Reason:**{e}")
         thumb ="cache/photo_2021-11-17_22-43-02.jpg"
-        await mystic.delete()   
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
-        hmo = await message.reply_photo(
-            photo=thumb, 
-            caption=(f"**List Of Result**\n\n『1』 <b>{title1}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n『2』 <b>{title2}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n『3』 <b>{title3}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n『4』 <b>{title4}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n『5』 <b>{title5}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>"),    
+        await mystic.edit( 
+            f"**List Of Result**\n\n『1』 <b>{title1}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n『2』 <b>{title2}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n『3』 <b>{title3}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n『4』 <b>{title4}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n『5』 <b>{title5}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>",    
             reply_markup=InlineKeyboardMarkup(buttons),
         )  
         disable_web_page_preview=True
