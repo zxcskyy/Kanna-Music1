@@ -110,16 +110,16 @@ def time_to_seconds(time):
 @Client.on_message(command(["music", "song", "download"]))
 async def mpthree(_, message: Message):
     chat_id = message.chat.id
-    if not await is_served_chat(chat_id):
-        await message.reply_text(f"❌ Not in allowed list chats\n\n{BOT_NAME} is only for allowed chats. Ask any Sudo User to allow your chat.\nCheck Sudo Users List Below",
-                                 reply_markup=InlineKeyboardMarkup(
-                                     [
-                                         [
-                                             InlineKeyboardButton(text='Sudo list 📜', url=f'https://t.me/{BOT_USERNAME}?start=sudolist')
-                                         ]
-                                     ]
-                                 ))
-        return await app.leave_chat(chat_id)  
+    #if not await is_served_chat(chat_id):
+        #await message.reply_text(f"❌ Not in allowed list chats\n\n{BOT_NAME} is only for allowed chats. Ask any Sudo User to allow your chat.\nCheck Sudo Users List Below",
+        #                         reply_markup=InlineKeyboardMarkup(
+        #                             [
+        #                                 [
+        #                                     InlineKeyboardButton(text='Sudo list 📜', url=f'https://t.me/{BOT_USERNAME}?start=sudolist')
+        #                                 ]
+        #                             ]
+        #                         ))
+        #return await app.leave_chat(chat_id)  
     if message.sender_chat:
         return await message.reply_text("❌ You're an __Anonymous Admin__!\n✅ Revert back to User Account From Admin Rights.")  
     user_id = message.from_user.id
