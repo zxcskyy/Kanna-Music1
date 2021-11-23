@@ -47,7 +47,6 @@ For any assistance or help, checkout our support group and channel.""",
        reply_markup=pstart_markup,
        disable_web_page_preview=True
     )
-    return
 
     
 @Client.on_message(filters.private & filters.incoming & filters.command("start"))
