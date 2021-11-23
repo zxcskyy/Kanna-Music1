@@ -86,7 +86,7 @@ from Music.MusicUtilities.database.assistant import (
     get_assistant,
     save_assistant,
 )
-from Music.config import DURATION_LIMIT
+from Music.config import DURATION_LIMIT, LOG_GROUP_ID
 from Music.MusicUtilities.helpers.decorators import errors
 from Music.MusicUtilities.helpers.filters import command
 from Music.MusicUtilities.helpers.gets import (
