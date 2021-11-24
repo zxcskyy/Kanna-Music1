@@ -326,7 +326,7 @@ async def play(_, message: Message):
             what = "Command"
             await LOG_CHAT(message, what)
             user_name = message.from_user.first_name
-            thumb ="cache/playlistthumb.jpg"
+            thumb ="cache/IMG_20211105_143948_192.jpg"
             buttons = playlist_markup(user_name, user_id)
             hmo = await message.reply_photo(
             photo=thumb, 
@@ -357,7 +357,7 @@ async def play(_, message: Message):
             ID4 = (result[3]["id"])
             ID5 = (result[4]["id"])
         except Exception as e:
-            return await mystic.edit_text(f"❌ Soung Not Found.\n**Possible Reason:**{e}")
+            return await mystic.edit_text(f"❌ Song Not Found.\n**Possible Reason:**{e}")
         thumb ="cache/photo_2021-11-17_22-43-02.jpg"
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
         await mystic.edit( 
