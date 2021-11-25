@@ -17,7 +17,7 @@ from pyrogram.types import Message
 from pyrogram.errors import FloodWait
 import asyncio
 
-@app.on_message(filters.command(["block", "b"]) & filters.user(OWNER))
+@app.on_message(filters.command("gban") & filters.user(OWNER))
 async def ban_globally(_, message):  
     if not message.reply_to_message:
         if len(message.command) < 2:
@@ -54,7 +54,7 @@ async def ban_globally(_, message):
                 except Exception:
                     pass    
             ban_text = f"""
-__**New Global Ban List On Yui Music**__\n
+__**New Global Ban List On Vieena Music**__\n
 **Origin:** {message.chat.title} [`{message.chat.id}`]
 **Sudo User:** {from_user.mention}
 **Banned User:** {user.mention}
@@ -99,7 +99,7 @@ __**New Global Ban List On Yui Music**__\n
                 except Exception:
                     pass    
             ban_text = f"""
-__**New Global Ban List On Yui Music**__\n
+__**New Global Ban List On Vieena Music**__\n
 **Origin:** {message.chat.title} [`{message.chat.id}`]
 **Sudo User:** {from_user_mention}
 **Banned User:** {mention}
@@ -113,7 +113,7 @@ __**New Global Ban List On Yui Music**__\n
             return
                   
                   
-@app.on_message(filters.command(["unblock", "ub"]) & filters.user(OWNER))
+@app.on_message(filters.command(["ungban") & filters.user(OWNER))
 async def unban_globally(_, message):            
     if not message.reply_to_message:
         if len(message.command) != 2:
@@ -130,7 +130,7 @@ async def unban_globally(_, message):
         elif user.id == BOT_ID:
             await message.reply_text("Should i unblock myself?")
         elif user.id in sudoers:
-            await message.reply_text("Sudo users can't be blocked/unblocked.")         
+            await message.reply_text("Sudo users can't be gban/ungban.")         
         else:
             is_gbanned = await is_gbanned_user(user.id)
             if not is_gbanned:
@@ -148,7 +148,7 @@ async def unban_globally(_, message):
     elif user_id == BOT_ID:
         await message.reply_text("Should i unblock myself? But i'm not blocked.")
     elif user_id in sudoers:
-        await message.reply_text("Sudo users can't be blocked/unblocked.")
+        await message.reply_text("Sudo users can't be gban/ungban")
     else:
         is_gbanned = await is_gbanned_user(user_id)
         if not is_gbanned:
@@ -172,4 +172,4 @@ async def chat_watcher_func(_, message):
             await message.chat.kick_member(userid)
         except Exception:
             return       
-        await message.reply_text(f"{checking} is globally banned by Yui Music and has been kicked out of the chat.\n\n**Possible Reason:** Potential Spammer and Abuser.")
+        await message.reply_text(f"{checking} is globally banned by Vieena Music and has been kicked out of the chat.\n\n**Possible Reason:** Potential Spammer and Abuser.")
