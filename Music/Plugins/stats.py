@@ -16,7 +16,7 @@ import time
 from pymongo import MongoClient
 from Music.config import MONGO_DB_URI as smex
 
-@app.on_message(filters.command("mstats") & ~filters.edited)
+@app.on_message(filters.command("stats") & ~filters.edited)
 async def gstats(_, message):
     m = await message.reply_text("**Getting Stats...**\n\nPlease wait for some time...")
     served_chats = []
@@ -32,9 +32,9 @@ async def gstats(_, message):
             j += 1
         except Exception:
             continue                     
-    modules_count ="290"
+    modules_count ="20"
     pytg_version ="1.9.7 Release Beta Candidate 15"
-    file_on_module ="2500"
+    file_on_module ="250"
     sc = platform.system()
     arch = platform.machine()
     ram = str(round(psutil.virtual_memory().total / (1024.0 **3)))+" GB"
