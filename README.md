@@ -1,11 +1,11 @@
-<h2 align="centre">Prime Music Player</h2>
+<h2 align="centre">Vieena Music Player</h2>
 
 <h3>Requirements 📝</h3>
 
 - FFmpeg (Latest)
 - NodeJS [nodesource.com](https://nodesource.com/) (NodeJS 17+)
 - Python (3.10+)
-- [PyTgCalls](https://github.com/pytgcalls/pytgcalls) (0.8.1rc1)
+- [PyTgCalls](https://github.com/pytgcalls/pytgcalls) (Lastest)
 - [MongoDB](https://cloud.mongodb.com/) (3.12.1)
 - [2nd Telegram Account](https://telegram.org/blog/themes-accounts#multiple-accounts) (needed for userbot)
 
