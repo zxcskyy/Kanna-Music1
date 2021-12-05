@@ -130,20 +130,20 @@ def time_to_seconds(time):
         int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":")))
     )
 
-@Client.on_message(command(["play", f"play@{BOT_USERNAME}", "p"]))
+@Client.on_message(command("play"))
 async def play(_, message: Message):
     chat_id = message.chat.id
-    #if not await is_served_chat(chat_id):
-    #    await message.reply_text(f"❌ Not in allowed list chats\n\n{BOT_NAME} is only for allowed chats. Ask any Sudo User to allow your chat.\nCheck Sudo Users List Below",
-    #                             reply_markup=InlineKeyboardMarkup(
-    #                                 [
-    #                                     [
-    #                                         InlineKeyboardButton(text="Support Group", url="https://t.me/vieenasupport"),
-    #                                         InlineKeyboardButton(text="Channel Update", url="https://t.me/ahhsudahlahhh"),
-    #                                     ]
-    #                                 ]
-    #                             ))
-    #    return await app.leave_chat(chat_id)  
+    if not await is_served_chat(chat_id):
+        await message.reply_text(f"❌ Not in allowed list chats\n\n{BOT_NAME} is only for allowed chats. Ask any Sudo User to allow your chat.\nCheck Sudo Users List Below",
+                                 reply_markup=InlineKeyboardMarkup(
+                                     [
+                                         [
+                                             InlineKeyboardButton(text="Support Group", url="https://t.me/vieenasupport"),
+                                             InlineKeyboardButton(text="Channel Update", url="https://t.me/ahhsudahlahhh"),
+                                         ]
+                                     ]
+                                 ))
+        return await app.leave_chat(chat_id)  
     if message.sender_chat:
         return await message.reply_text("❌ You're an __Anonymous Admin__!\n✅ Revert back to User Account From Admin Rights.")  
     user_id = message.from_user.id
@@ -361,7 +361,7 @@ async def play(_, message: Message):
         thumb ="cache/photo_2021-11-17_22-43-02.jpg"
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
         await mystic.edit( 
-            f"**List Of Result**\n\n『1』 <b>{title1}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n『2』 <b>{title2}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n『3』 <b>{title3}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n『4』 <b>{title4}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n『5』 <b>{title5}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>",    
+            f"**List Of Result**\n\n1 <b>{title1}</b>\n💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\nPowered by ᴠɪᴇᴇɴᴀ ʀᴏʙᴏᴛ\n\n 2 <b>{title2}</b>\n💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\nPowered by ᴠɪᴇᴇɴᴀ ʀᴏʙᴏᴛ\n\n 3 <b>{title3}</b>\n💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\nPowered by ᴠɪᴇᴇɴᴀ ʀᴏʙᴏᴛ\n\n4 <b>{title4}</b>\n💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\nPowered by ᴠɪᴇᴇɴᴀ ʀᴏʙᴏᴛ\n\n5 <b>{title5}</b>\n💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>\nPowered by ᴠɪᴇᴇɴᴀ ʀᴏʙᴏᴛ",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True
         )  
