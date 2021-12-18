@@ -46,13 +46,16 @@ pstart_markup=InlineKeyboardMarkup(
 @Client.on_message(filters.group & filters.command(["start", "help"]))
 async def start(_, message: Message):
     chat_id = message.chat.id
-    await message.reply_text(
-        f"""Hi {message.from_user.mention()}!
+    await _.send_message(
+        chat_id,
+        f"""
+✨ Hi {message.from_user.mention()}!
 
 Thanks for using {BOT_NAME} in {message.chat.title}.
 For any assistance or help, checkout our support group and channel.""",
-       reply_markup=pstart_markup,
-       disable_web_page_preview=True
+       disable_web_page_preview=True,
+       reply_markup=InlineKeyboardMarkup(
+          [[InlineKeyboardButton("💭 Vienna Support", url="https://t.me/vieenasupport")]]),
     )
 
     
