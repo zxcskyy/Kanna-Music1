@@ -282,3 +282,11 @@ async def stop_cmd(_, message):
                 caption=f"<b>__Skipped Voice Chat__</b>\n\n🎥 <b>__Started Playing:__</b> {title} \n⏳ <b>__Duration:__</b> {duration} \n👤 <b>__Requested by:__ </b> {username}",
                 )
                 return
+
+@app.on_message(filters.command(["reload", f"reload@{BOT_USERNAME}"]))
+async def reload(_, message):
+    chat_id = message.chat.id
+    await _.send_message(
+    chat_id,
+    "✅ Bot restarted **successfully**\n\n✅ **Admin** list has been **updated**"
+)
