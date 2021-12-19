@@ -32,7 +32,7 @@ pstart_markup=InlineKeyboardMarkup(
                         f"➕ Summon {BOT_NAME} ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ],[
                     InlineKeyboardButton(
-                        "📣 Channel", url="https://t.me/ahhsudahlahhh"), 
+                        "📣 Channel", url="https://t.me/kyyproject"), 
                     InlineKeyboardButton(
                         "👥 Support", url="https://t.me/vieenasupport")
                 ],[
