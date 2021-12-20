@@ -33,7 +33,7 @@ async def gstats(_, message):
         except Exception:
             continue                     
     modules_count ="20"
-    pytg_version ="1.9.7 Release Beta Candidate 15"
+    pytg_version ="0.8.3"
     file_on_module ="250"
     sc = platform.system()
     arch = platform.machine()
@@ -48,7 +48,7 @@ async def gstats(_, message):
     free = (hdd.free / (1024.0 ** 3))
     free = str(free)
     msg = f"""
-**Global Stats of Private Music Bot**:\n
+**Global Stats of Vieena Music Bot**:\n
 [•] <u>__**System Stats**__</u>
 **Music Uptime:** {uptime}
 **System Process:** Online
