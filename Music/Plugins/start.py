@@ -37,7 +37,9 @@ pstart_markup=InlineKeyboardMarkup(
                         "👥 Support", url="https://t.me/vieenasupport")
                 ],[
                     InlineKeyboardButton(
-                        "❤️ Owner", url="https://t.me/zxcskyy")
+                        "❤️ Owner", url="https://t.me/zxcskyy"),
+                    InlineKeyboardButton(
+                        "⚒️ Source Code", url="https://github.com/zxcskyy/VieenaXYukki)
                 ]
             ]
         ) 
@@ -52,10 +54,10 @@ async def start(_, message: Message):
 ✨ Hi {message.from_user.mention()}!
 
 Thanks for using {BOT_NAME} in {message.chat.title}.
-For any assistance or help, checkout our support group and channel.""",
+For any assistance or help, checkout our support group.""",
        disable_web_page_preview=True,
        reply_markup=InlineKeyboardMarkup(
-          [[InlineKeyboardButton("💭 Vienna Support", url="https://t.me/vieenasupport")]]),
+          [[InlineKeyboardButton("Support Group", url="https://t.me/vieenasupport")]]),
     )
 
     
