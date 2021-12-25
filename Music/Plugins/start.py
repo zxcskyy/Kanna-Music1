@@ -38,8 +38,6 @@ pstart_markup=InlineKeyboardMarkup(
                 ],[
                     InlineKeyboardButton(
                         "❤️ Owner", url="https://t.me/zxcskyy"),
-                    InlineKeyboardButton(
-                        "⚒️ Source Code", url="https://github.com/zxcskyy/VieenaXYukki)
                 ]
             ]
         ) 
