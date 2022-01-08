@@ -19,7 +19,7 @@ def get_text(message) -> [None, str]:
 
 
 
-OWNER_NAME = "ᴋʏʏ.ᴇx
+OWNER_NAME = "ᴋʏʏ.ᴇx"
 OWNER_USERNAME = "zxcskyy"
 
 
