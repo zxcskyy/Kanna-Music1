@@ -1,16 +1,23 @@
+import time
+import pytz
 import asyncio
 import time
 import uvloop
 import importlib
+from pytz import utc
 from pyrogram import Client
-from Music.config import API_ID, API_HASH, BOT_TOKEN, MONGO_DB_URI, SUDO_USERS, LOG_GROUP_ID
+from Music.config import API_ID, API_HASH, BOT_TOKEN, MONGO_DB_URI, SUDO_USERS, LOG_GROUP_ID, AUTO_LEAVE
 from Music import BOT_NAME, ASSNAME, app, client
 from Music.MusicUtilities.database.functions import clean_restart_stage
 from Music.MusicUtilities.database.queue import (get_active_chats, remove_active_chat)
 from Music.MusicUtilities.tgcallsrun import run
 from pytgcalls import idle
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
-import time
+from Music.plugins.autoleave import leave_from_inactive_call
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+
+
+scheduler = AsyncIOScheduler()
 
 Client(
     ':Music:',
@@ -52,8 +59,14 @@ async def load_start():
             print("Error came while clearing db")
             pass     
     await app.send_message(LOG_GROUP_ID, "Vieena Music Bot Started")
-    await client.send_message(LOG_GROUP_ID, "Assistant Of Vieena Music Started")
     print("[INFO]: STARTED BOT AND SENDING THE INFO TO VIEENA SERVER SERVER")
+    if AUTO_LEAVE:
+        print("[ INFO ] STARTING SCHEDULER")
+        scheduler.configure(timezone=pytz.utc)
+        scheduler.add_job(
+            leave_from_inactive_call, "interval", seconds=AUTO_LEAVE
+        )
+        scheduler.start()    
     
    
 loop = asyncio.get_event_loop()
