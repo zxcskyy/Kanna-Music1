@@ -33,7 +33,7 @@ async def gstats(_, message):
         except Exception:
             continue                     
     modules_count ="20"
-    pytg_version ="0.8.3"
+    pytg_version ="0.8.4"
     file_on_module ="250"
     sc = platform.system()
     arch = platform.machine()
@@ -59,6 +59,7 @@ async def gstats(_, message):
 **Python Version:** {pyver.split()[0]}
 **Pyrogram Version:** {pyrover}
 **PyTgCalls Version:** {pytg_version}
+
 
 [•] <u>__**Bot Stats**__</u>
 **Modules Loaded:** {modules_count}
