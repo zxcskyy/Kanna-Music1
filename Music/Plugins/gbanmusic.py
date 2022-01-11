@@ -21,7 +21,7 @@ import asyncio
 async def ban_globally(_, message):  
     if not message.reply_to_message:
         if len(message.command) < 2:
-            await message.reply_text("**Usage:**\n/block [USERNAME | USER_ID]")
+            await message.reply_text("**Usage:**\n/gban [USERNAME | USER_ID]")
             return
         user = message.text.split(None, 2)[1]
         if "@" in user:
@@ -117,7 +117,7 @@ __**New Global Ban List On Vieena Music**__\n
 async def unban_globally(_, message):            
     if not message.reply_to_message:
         if len(message.command) != 2:
-            await message.reply_text("**Usage:**\n/unblock [USERNAME | USER_ID]")
+            await message.reply_text("**Usage:**\n/ungban [USERNAME | USER_ID]")
             return
         user = message.text.split(None, 1)[1]
         if "@" in user:
