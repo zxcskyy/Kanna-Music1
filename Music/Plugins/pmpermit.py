@@ -17,7 +17,7 @@ async def pmPermit(client: USER, message: Message):
                 return
             await USER.send_message(
                 message.chat.id,
-            f"Hi,Saya adalah **Layanan Asistant [Vieena Robot]{t.me/vieenarobot}.**\n\n ❗️ **Rules:**\n   - Jangan Spam Pesan disini\n   - Jangan Spam Lagu Biar Ga Error\n   - Cara Menggunakan Bot Hanya Memasukan bot ke dalam grup dan jadikan admin \n\n 👉 **KIRIM LINK INVITE ATAU USERNAME GRUP, JIKA ASSISTANT TIDAK DAPAT BERGABUNG DENGAN GRUP ANDA.**\n\n **Group Support :** @vieenasuport - **Owner** @zxcskyy\n\n",
+            f"Hi,Saya adalah **Layanan Asistant Vieena Robot.**\n\n ❗️ **Rules:**\n   - Jangan Spam Pesan disini\n   - Jangan Spam Lagu Biar Ga Error\n   - Cara Menggunakan Bot Hanya Memasukan bot ke dalam grup dan jadikan admin \n\n 👉 **KIRIM LINK INVITE ATAU USERNAME GRUP, JIKA ASSISTANT TIDAK DAPAT BERGABUNG DENGAN GRUP ANDA.**\n\n **Group Support :** @vieenasuport - **Owner** @zxcskyy\n\n",
             )
             return
 
