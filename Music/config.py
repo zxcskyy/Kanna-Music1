@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 get_queue = {}
+
 SESSION_NAME = getenv('SESSION_NAME', 'session')
 BOT_TOKEN = getenv('BOT_TOKEN')
 API_ID = int(getenv('API_ID', "10892147"))
@@ -19,3 +20,4 @@ OWNER_ID = list(map(int, getenv('OWNER_ID', '').split()))
 GROUP = getenv("GROUP", None)
 CHANNEL = getenv("CHANNEL", None)
 AUTO_LEAVE = int(getenv("AUTO_LEAVE", "1500"))
+PMPERMIT = getenv("PMPERMIT", None)
