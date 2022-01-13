@@ -3,13 +3,14 @@ import asyncio
 from Music.config import SUDO_USERS, PMPERMIT, OWNER_ID, GROUP
 from pyrogram import filters
 from pyrogram.types import Message
-from Music.MusicUtilities.tgcallsrun.callsmusic import client as USER
+from Music.MusicUtilities.helpers.filters import command
+from Music.MusicUtilities.tgcallsrun.music import smexy as KONTOL
 
-PMSET =True
+PMSET = True
 pchats = []
 
-@USER.on_message(filters.text & filters.private & ~filters.me & ~filters.bot)
-async def pmPermit(client: USER, message: Message):
+@KONTOL.on_message(filters.text & filters.private & ~filters.me & ~filters.bot)
+async def pmPermit(client: KONTOL, message: Message):
     if PMPERMIT == "ENABLE":
         if PMSET:
             chat_id = message.chat.id
@@ -23,7 +24,7 @@ async def pmPermit(client: USER, message: Message):
 
     
 
-@Client.on_message(filters.command(["/pmpermit"]))
+@Client.on_message(command("pmpermit"))
 async def bye(client: Client, message: Message):
     if message.from_user.id in SUDO_USERS:
         global PMSET
@@ -38,8 +39,8 @@ async def bye(client: Client, message: Message):
             await message.reply_text("Pmpermit turned off")
             return
 
-@USER.on_message(filters.text & filters.private & filters.me)        
-async def autopmPermiat(client: USER, message: Message):
+@KONTOL.on_message(filters.text & filters.private & filters.me)        
+async def autopmPermiat(client: KONTOL, message: Message):
     chat_id = message.chat.id
     if not chat_id in pchats:
         pchats.append(chat_id)
@@ -47,8 +48,8 @@ async def autopmPermiat(client: USER, message: Message):
         return
     message.continue_propagation()    
     
-@USER.on_message(filters.command("yes", [".", ""]) & filters.me & filters.private)
-async def pmPermiat(client: USER, message: Message):
+@KONTOL.on_message(command("yes") & filters.me & filters.private)
+async def pmPermiat(client: KONTOL, message: Message):
     chat_id = message.chat.id
     if not chat_id in pchats:
         pchats.append(chat_id)
@@ -57,8 +58,8 @@ async def pmPermiat(client: USER, message: Message):
     message.continue_propagation()    
     
 
-@USER.on_message(filters.command("no", [".", ""]) & filters.me & filters.private)
-async def rmpmPermiat(client: USER, message: Message):
+@KONTOL.on_message(command("no") & filters.me & filters.private)
+async def rmpmPermiat(client: KONTOL, message: Message):
     chat_id = message.chat.id
     if chat_id in pchats:
         pchats.remove(chat_id)
