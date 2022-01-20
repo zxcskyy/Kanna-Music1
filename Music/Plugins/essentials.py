@@ -203,3 +203,9 @@ async def shellrunner(client, message):
         await edit_or_reply(message, text=f"**OUTPUT:**\n```{output}```")
     else:
         await edit_or_reply(message, text="**OUTPUT: **\n`No output`")
+
+@Client.on_message(command("ownerlist")
+ async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("**\n\n@zxcskyy\n\n@IDnyaKosong\n\n@Bukan_guudlooking**")
+
