@@ -29,15 +29,12 @@ pstart_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        f"➕ Summon {BOT_NAME} ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                        f"➕ Summon {BOT_NAME} ➕", url=f"https://t.me/kannamusic_bot?startgroup=true")
                 ],[
                     InlineKeyboardButton(
                         "📣 Channel", url="https://t.me/kyyproject"), 
                     InlineKeyboardButton(
                         "👥 Support", url="https://t.me/vieenasupport")
-                ],[
-                    InlineKeyboardButton(
-                        "❤️ Owner", url="https://t.me/zxcskyy"),
                 ]
             ]
         ) 
@@ -66,7 +63,7 @@ async def play(_, message: Message):
         user_name = message.from_user.first_name
         rpk = "["+user_name+"](tg://user?id="+str(user_id)+")" 
         await app.send_message(message.chat.id,
-            text=f"Hi. {rpk}!\n\nThis is Vieena Music Bot.\nI play music on Telegram's Voice Chats.\n\nOnly for selected chats.",
+            text=f"Hi. {rpk}!\n\nI'am a Music Bot.\nI play music on Telegram's Voice Chats.\n\nFor Public/Private Group .",
             parse_mode="markdown",
             reply_markup=pstart_markup
         )
@@ -96,7 +93,7 @@ async def play(_, message: Message):
 📎 **Channel Link:** [Visit From Here]({x["channel_url"]})
 🔗 **Link:** [Link]({x["webpage_url"]})
 
-⚡️ __Searched Powered By Vieena Music Bot__"""
+⚡️ __Searched Powered By Kanna Music Bot__"""
             link = (x["webpage_url"])
             buttons = personal_markup(link)
             userid = message.from_user.id
