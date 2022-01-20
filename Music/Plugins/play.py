@@ -393,7 +393,7 @@ async def play(_, message: Message):
         checking = f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
         await message.reply_photo(
             photo=thumb,
-            caption=(f"🎬 <b>__Song:__</b>[{title[:25]}]({link}) \n⏳ <b>__Duration:__</b> {duration} \n👤 <b>__Requested by:__ </b>{checking} \n🚧 <b>__Queued at:__</b> <b>#{position}!</b>"),
+            caption=(f"🎬 <b>__Song:__</b>[{title[:25]}]({link}) \n⏳ <b>__Duration:__</b> {duration} \n👤 <b>__Requested by:__ </b>{checking} \n🚧 <b>__Queued at:__</b> <b>#{position}!</b> <b>**Powered By** __Kanna Music__</b>"),
             reply_markup=InlineKeyboardMarkup(buttons)
         )
         return await mystic.delete()     
@@ -424,7 +424,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo=thumb,
         reply_markup=InlineKeyboardMarkup(buttons),    
-        caption=(f"🎥 <b>__Playing:__</b>[{title[:25]}]({link}) \n⏳ <b>__Duration:__</b> {duration} \n👤 <b>__Requested by:__</b>{checking}")
+        caption=(f"🎥 <b>__Playing:__</b>[{title[:25]}]({link}) \n⏳ <b>__Duration:__</b> {duration} \n👤 <b>__Requested by:__</b>{checking} <b>**Powered By** __Kanna Music__</b>")
     )   
         return await mystic.delete()
          
@@ -541,7 +541,7 @@ async def startyuplay(_,CallbackQuery):
         await mystic.delete()
         m = await CallbackQuery.message.reply_photo(
         photo=thumb,
-        caption=(f"🎬 <b>__Song:__ </b>[{title[:25]}]({url}) \n⏳ <b>__Duration:__</b> {duration} \n💡 <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{id})\n👤 <b>__Requested by:__ </b>{checking} \n🚧 <b>__Queued at:__</b> <b>#{position}!</b>"),
+        caption=(f"🎬 <b>__Song:__ </b>[{title[:25]}]({url}) \n⏳ <b>__Duration:__</b> {duration} \n💡 <b>__Info:__</b> [More Information](https://t.me/kannamusic_bot?start=info_{id})\n👤 <b>__Requested by:__ </b>{checking} \n🚧 <b>__Queued at:__</b> <b>#{position}!</b>"),
         reply_markup=InlineKeyboardMarkup(buttons)
     )
         os.remove(thumb)
@@ -563,7 +563,7 @@ async def startyuplay(_,CallbackQuery):
         m = await CallbackQuery.message.reply_photo(
         photo=thumb,
         reply_markup=InlineKeyboardMarkup(buttons),    
-        caption=(f"🎥 <b>__Playing:__ </b>[{title[:25]}]({url}) \n⏳ <b>__Duration:__</b> {duration} \n💡 <b>__Info:__</b> [More Information](https://t.me/{BOT_USERNAME}?start=info_{id})\n👤**__Requested by:__** {checking}")
+        caption=(f"🎥 <b>__Playing:__ </b>[{title[:25]}]({url}) \n⏳ <b>__Duration:__</b> {duration} \n💡 <b>__Info:__</b> [More Information](https://t.me/kannamusic_bot?start=info_{id})\n👤**__Requested by:__** {checking}")
     )   
         os.remove(thumb)
         await CallbackQuery.message.delete()
@@ -623,7 +623,7 @@ async def popat(_,CallbackQuery):
     if i == 1:
         buttons = search_markup2(ID6, ID7, ID8, ID9, ID10, duration6, duration7, duration8, duration9, duration10 ,user_id, query)
         await CallbackQuery.edit_message_text(
-            f"6 <b>{title6}</b>\n💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID6})__</u>\n Powered by ᴠɪᴇᴇɴᴀ ʀᴏʙᴏᴛ\n\n7 <b>{title7}</b>\n💡<u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID7})__</u>\n Powered by ᴠɪᴇᴇɴᴀ ʀᴏʙᴏᴛ\n\n8 <b>{title8}</b>\n💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID8})__</u>\n Powered by ᴠɪᴇᴇɴᴀ ʀᴏʙᴏᴛ\n\n9 <b>{title9}</b>\n💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID9})__</u>\n Powered by ᴠɪᴇᴇɴᴀ ʀᴏʙᴏᴛ\n\n10 <b>{title10}</b>\n💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID10})__</u>\n Powered by ᴠɪᴇᴇɴᴀ ʀᴏʙᴏᴛ",    
+            f"6 <b>{title6}</b>\n💡 <u>__[More Information](https://t.me/kannamusic_bot?start=info_{ID6})__</u>\n\n 7 <b>{title7}</b>\n💡<u>__[More Information](https://t.me/kannamusic_bot?start=info_{ID7})__</u>\n\n 8 <b>{title8}</b>\n💡 <u>__[More Information](https://t.me/kannamusic_bot?start=info_{ID8})__</u>\n\n 9 <b>{title9}</b>\n💡 <u>__[More Information](https://t.me/kannamusic_bot?start=info_{ID9})__</u>\n\n 10 <b>{title10}</b>\n💡 <u>__[More Information](https://t.me/kannamusic_bot?start=info_{ID10})__</u>",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True
         )  
@@ -631,7 +631,7 @@ async def popat(_,CallbackQuery):
     if i == 2:
         buttons = search_markup(ID1, ID2, ID3, ID4, ID5, duration1, duration2, duration3, duration4, duration5, user_id, query)
         await CallbackQuery.edit_message_text(
-            f"『1』 <b>{title1}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID1})__</u>\n\n『2』 <b>{title2}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID2})__</u>\n\n『3』 <b>{title3}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID3})__</u>\n\n『4』 <b>{title4}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID4})__</u>\n\n『5』 <b>{title5}</b>\n  ┗  💡 <u>__[More Information](https://t.me/{BOT_USERNAME}?start=info_{ID5})__</u>",    
+            f"1 <b>{title1}</b>\n  ┗  💡 <u>__[More Information](https://t.me/kannamusic_bot?start=info_{ID1})__</u>\n\n 2 <b>{title2}</b>\n  ┗  💡 <u>__[More Information](https://t.me/kannamusic_bot?start=info_{ID2})__</u>\n\n 3 <b>{title3}</b>\n  ┗  💡 <u>__[More Information](https://t.me/kannamusic_bot?start=info_{ID3})__</u>\n\n 4 <b>{title4}</b>\n  ┗  💡 <u>__[More Information](https://t.me/kannamusic_bot?start=info_{ID4})__</u>\n\n 5 <b>{title5}</b>\n  ┗  💡 <u>__[More Information](https://t.me/kannamusic_bot?start=info_{ID5})__</u>",    
             reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True 
         )  
